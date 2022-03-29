@@ -15,20 +15,29 @@ set wildignore+=**/.git/*
 
 " >> load plugins
 call plug#begin(stdpath('data') . '/vimplug')
+    " Telescope
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-lua/popup.nvim'
     Plug 'nvim-telescope/telescope.nvim'
+    Plug 'nvim-telescope/telescope-fzy-native.nvim'
+
+    " LSP Plugins
     Plug 'neovim/nvim-lspconfig'
     Plug 'williamboman/nvim-lsp-installer', { 'branch': 'main' }
-    Plug 'hrsh7th/nvim-compe'
+    Plug 'hrsh7th/nvim-cmp'
+    Plug 'hrsh7th/cmp-buffer'
+    Plug 'nvim-lua/lsp_extensions.nvim'
+
+    " Nvim tree sitter
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+    Plug 'nvim-treesitter/playground'
     Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 
-    Plug 'glepnir/galaxyline.nvim', { 'branch': 'main' }
-    Plug 'kyazdani42/nvim-web-devicons'  " needed for galaxyline icons
+    " Plug 'glepnir/galaxyline.nvim', { 'branch': 'main' }
+    " Plug 'kyazdani42/nvim-web-devicons'  " needed for galaxyline icons
 
     Plug 'gruvbox-community/gruvbox'
-    Plug 'nikvdp/neomux'
+    " Plug 'nikvdp/neomux'
 
     Plug 'tpope/vim-ragtag'
     Plug 'tpope/vim-surround'
