@@ -13,7 +13,6 @@ set wildignore+=**/android/*
 set wildignore+=**/ios/*
 set wildignore+=**/.git/*
 
-" >> load plugins
 call plug#begin(stdpath('data') . '/vimplug')
     " Telescope
     Plug 'nvim-lua/plenary.nvim'
@@ -32,22 +31,24 @@ call plug#begin(stdpath('data') . '/vimplug')
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
     Plug 'nvim-treesitter/playground'
     Plug 'nvim-treesitter/nvim-treesitter-textobjects'
+    Plug 'nvim-treesitter/playground'
 
     " Plug 'glepnir/galaxyline.nvim', { 'branch': 'main' }
     " Plug 'kyazdani42/nvim-web-devicons'  " needed for galaxyline icons
 
     Plug 'gruvbox-community/gruvbox'
-    " Plug 'nikvdp/neomux'
 
     Plug 'tpope/vim-ragtag'
     Plug 'tpope/vim-surround'
     Plug 'tpope/vim-unimpaired'
-
+    Plug 'tpope/vim-commentary'
     Plug 'tpope/vim-eunuch'
     Plug 'tpope/vim-fugitive'
 
-    Plug 'tomtom/tcomment_vim'
     Plug 'preservim/nerdtree'
+
+    " prettier
+    Plug 'sbdchd/neoformat'
 call plug#end()
 
 colorscheme gruvbox
@@ -125,7 +126,6 @@ autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTa
 let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '-'
 
-
 nnoremap <Leader>h :wincmd h<CR>
 nnoremap <Leader>j :wincmd j<CR>
 nnoremap <Leader>k :wincmd k<CR>
@@ -133,8 +133,8 @@ nnoremap <Leader>l :wincmd l<CR>
 
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
-nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
+nnoremap <C-j> <C-w>j
 
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
@@ -186,5 +186,5 @@ lua <<EOF
 require("lsp")
 require("treesitter")
 require("statusbar")
-require("completion")
+--require("completion")
 EOF
