@@ -26,6 +26,7 @@ call plug#begin(stdpath('data') . '/vimplug')
     Plug 'neovim/nvim-lspconfig'
     Plug 'williamboman/nvim-lsp-installer', { 'branch': 'main' }
     Plug 'hrsh7th/nvim-cmp'
+    Plug 'hrsh7th/cmp-nvim-lsp'
     Plug 'hrsh7th/cmp-buffer'
     Plug 'nvim-lua/lsp_extensions.nvim'
 
@@ -33,7 +34,6 @@ call plug#begin(stdpath('data') . '/vimplug')
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
     Plug 'nvim-treesitter/playground'
     Plug 'nvim-treesitter/nvim-treesitter-textobjects'
-    Plug 'nvim-treesitter/playground'
 
     Plug 'gruvbox-community/gruvbox'
 
@@ -190,7 +190,7 @@ lua <<EOF
 require("lsp")
 require("treesitter")
 -- require("statusbar")
---require("completion")
+require("completion")
 EOF
 
 " plugins need to be installed on your machine
