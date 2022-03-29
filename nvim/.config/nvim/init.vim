@@ -19,6 +19,8 @@ call plug#begin(stdpath('data') . '/vimplug')
     Plug 'nvim-lua/popup.nvim'
     Plug 'nvim-telescope/telescope.nvim'
     Plug 'nvim-telescope/telescope-fzy-native.nvim'
+    Plug 'BurntSushi/ripgrep'
+    Plug 'sharkdp/fd'
 
     " LSP Plugins
     Plug 'neovim/nvim-lspconfig'
@@ -32,9 +34,6 @@ call plug#begin(stdpath('data') . '/vimplug')
     Plug 'nvim-treesitter/playground'
     Plug 'nvim-treesitter/nvim-treesitter-textobjects'
     Plug 'nvim-treesitter/playground'
-
-    " Plug 'glepnir/galaxyline.nvim', { 'branch': 'main' }
-    " Plug 'kyazdani42/nvim-web-devicons'  " needed for galaxyline icons
 
     Plug 'gruvbox-community/gruvbox'
 
@@ -95,7 +94,7 @@ nnoremap <Leader>pp <cmd>lua require'telescope.builtin'.builtin{}<CR>
 nnoremap <Leader>m <cmd>lua require'telescope.builtin'.oldfiles{}<CR>
 
 " find buffer
-nnoremap ; <cmd>lua require'telescope.builtin'.buffers{}<CR>
+nnoremap <Leader>fb <cmd>lua require'telescope.builtin'.buffers{}<CR>
 
 " find in current buffer
 nnoremap <Leader>/ <cmd>lua require'telescope.builtin'.current_buffer_fuzzy_find{}<CR>
@@ -104,7 +103,7 @@ nnoremap <Leader>/ <cmd>lua require'telescope.builtin'.current_buffer_fuzzy_find
 nnoremap <Leader>' <cmd>lua require'telescope.builtin'.marks{}<CR>
 
 " git files
-"nnoremap <Leader>f <cmd>lua require'telescope.builtin'.git_files{}<CR>
+nnoremap <Leader>f <cmd>lua require'telescope.builtin'.git_files{}<CR>
 
 " all files
 nnoremap <Leader>ps <cmd>lua require'telescope.builtin'.find_files{}<CR>
@@ -157,6 +156,11 @@ augroup VUONG_TRAN
     autocmd BufWritePre * :call TrimWhiteSpace()
 augroup END
 
+augroup highlight_yank
+    autocmd!
+    autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank({timeout = 40})
+augroup END
+
 
 " >> setup nerdcomment key bindings
 let g:NERDCreateDefaultMappings = 0
@@ -185,6 +189,11 @@ nnoremap <silent> gs    <cmd>Lspsaga signature_help<CR>
 lua <<EOF
 require("lsp")
 require("treesitter")
-require("statusbar")
+-- require("statusbar")
 --require("completion")
 EOF
+
+" plugins need to be installed on your machine
+" install rg: sudo apt-get install ripgrep => https://github.com/BurntSushi/ripgrep#installation
+" install lua: sudo apt install lua5.3
+" install fd: sudo apt install fd-find => https://github.com/sharkdp/fd
