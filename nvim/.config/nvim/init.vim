@@ -91,7 +91,7 @@ let g:mapleader=" "
 nnoremap <Leader>pp <cmd>lua require'telescope.builtin'.builtin{}<CR>
 
 " most recently used files
-nnoremap <Leader>m <cmd>lua require'telescope.builtin'.oldfiles{}<CR>
+nnoremap <Leader>rf <cmd>lua require'telescope.builtin'.oldfiles{}<CR>
 
 " find buffer
 nnoremap <Leader>fb <cmd>lua require'telescope.builtin'.buffers{}<CR>
