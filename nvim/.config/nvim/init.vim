@@ -197,3 +197,13 @@ EOF
 " install rg: sudo apt-get install ripgrep => https://github.com/BurntSushi/ripgrep#installation
 " install lua: sudo apt install lua5.3
 " install fd: sudo apt install fd-find => https://github.com/sharkdp/fd
+
+
+" tips
+" <C-^> go back and forth between 2 files
+" <C-o> <C-i> go back and forth between cursors history
+" <c-w> o -> close everything but your current buffer
+" <c-w> v -> open vertical split
+" <c-w> s -> open horizontal split
+" <c-w> = -> equally all your window size
+" <c-w> r -> swap window
