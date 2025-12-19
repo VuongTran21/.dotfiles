@@ -20,22 +20,22 @@ nnoremap("<C-j>", "<C-w>j", opts)
 nnoremap("<C-k>", "<C-w>k", opts)
 nnoremap("<C-l>", "<C-w>l", opts)
 
-tnoremap("<C-h>", "wincmd h", opts) -- Navigate Left
-tnoremap("<C-j>", "wincmd j", opts) -- Navigate Down
-tnoremap("<C-k>", "wincmd k", opts) -- Navigate Up
-tnoremap("<C-l>", "wincmd l", opts) -- Navigate Right
+tnoremap("<C-h>", "wincmd h", opts)          -- Navigate Left
+tnoremap("<C-j>", "wincmd j", opts)          -- Navigate Down
+tnoremap("<C-k>", "wincmd k", opts)          -- Navigate Up
+tnoremap("<C-l>", "wincmd l", opts)          -- Navigate Right
 
-tnoremap("<C-h>", "TmuxNavigateLeft", opts) -- Navigate Left
-tnoremap("<C-j>", "TmuxNavigateDown", opts) -- Navigate Down
-tnoremap("<C-k>", "TmuxNavigateUp", opts) -- Navigate Up
+tnoremap("<C-h>", "TmuxNavigateLeft", opts)  -- Navigate Left
+tnoremap("<C-j>", "TmuxNavigateDown", opts)  -- Navigate Down
+tnoremap("<C-k>", "TmuxNavigateUp", opts)    -- Navigate Up
 tnoremap("<C-l>", "TmuxNavigateRight", opts) -- Navigate Right
 
 -- Window management
-nnoremap("<leader>sv", ":vsplit", opts) -- vertically
-nnoremap("<leader>sh", ":split", opts) -- horizontally
+nnoremap("<leader>sv", ":vsplit", opts)              -- vertically
+nnoremap("<leader>sh", ":split", opts)               -- horizontally
 nnoremap("<leader>sm", ":MazimizerToggle<CR>", opts) -- Mazimizer
-nnoremap("<leader>sx", ":close<CR>", opts) -- close current split window
-nnoremap("<leader>se", "<C-w>=", opts) -- make splitted window equal width and height
+nnoremap("<leader>sx", ":close<CR>", opts)           -- close current split window
+nnoremap("<leader>se", "<C-w>=", opts)               -- make splitted window equal width and height
 
 -- Moving, indent text around
 vnoremap("J", ":m '>+1<CR>gv=gv")
@@ -69,6 +69,7 @@ nnoremap("<leader>pw", "<cmd>lua require('telescope.builtin').grep_string({ sear
 nnoremap("<leader>pb", "<cmd>lua require('telescope.builtin').buffers()<CR>")
 nnoremap("<leader>vh", "<cmd>lua require('telescope.builtin').help_tags()<CR>")
 nnoremap("<C-p>", "<cmd>lua require('telescope.builtin').git_files()<CR>")
+nnoremap("<leader>nc", "<cmd>lua require('telescope.builtin').find_files({cwd = '~/.config/nvim/'})<CR>")
 
 nnoremap("<leader>gc", "<cmd>Telescope git_commits<CR>")
 nnoremap("<leader>gfc", "<cmd>Telescope git_bcommits<CR>")
