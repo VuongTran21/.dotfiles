@@ -1,3 +1,4 @@
-require('vuong.config.options')
-require('vuong.config.keybindings')
-require('vuong.config.lazy')
+require('vuong.config')
+require('vuong.lazy')
+require('vuong.lsp')
+
