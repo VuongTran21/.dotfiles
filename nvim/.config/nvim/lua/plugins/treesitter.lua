@@ -1,9 +1,21 @@
 return {
-	"nvim-treesitter/nvim-treesitter",
-	config = function()
-		require('nvim-treesitter.configs').setup({
-			build = ':TSUpdate',
-			auto_install = true,
-		})
-	end
+    'nvim-treesitter/nvim-treesitter',
+    build = ":TSUpdate",
+    config = function()
+	local configs = require("nvim-treesitter.configs")
+	configs.setup({
+	    highlight = {
+		enable = true
+	    },
+	    indent = { enable = true },
+	    autotage = { enable = true },
+	    ensure_intalled = {
+		"lua",
+		"tsx",
+		"typescript",
+		"php",
+	    },
+	    auto_install = false,
+	})
+    end
 }
