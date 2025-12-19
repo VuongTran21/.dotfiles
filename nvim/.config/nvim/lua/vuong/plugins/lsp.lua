@@ -99,16 +99,17 @@ return {
         require('mason-lspconfig').setup({
             ensure_installed = {
                 "lua_ls",
-                "intelephense",
                 "ts_ls",
+                "intelephense",
                 "eslint",
                 "pyright",
+                "vue_ls",
             },
             handlers = {
-                function(server_name)
-                    -- if server_name == "luals" then return end -- avoid starting with {}
-                    require('lspconfig')[server_name].setup({})
-                end,
+                -- function(server_name)
+                --     -- if server_name == "luals" then return end -- avoid starting with {}
+                --     require('lspconfig')[server_name].setup({})
+                -- end,
 
                 lua_ls = function()
                     require('lspconfig').lua_ls.setup({
