@@ -109,3 +109,9 @@ source $HOME/.alias
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+export NVIDIA_API_KEY="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"
+
+# opencode
+export PATH=/home/vuongtran/.opencode/bin:$PATH
